@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Simple Password Generator</title>
+  </head>
+<body>
+  <div class="card" role="region" aria-label="Password Generator">
+    <h1>Simple Password Generator</h1>
+    <p>Choose what you want, set the length, and click <strong>Generate</strong></p>
+
+    <label class="hint" for="password">Generated password</label>
+    <div class="output">
+      <input id="password" type="text" placeholder="Your password will appear here" aria-live="polite" readonly />
+      <button id="copyBtn" class="btn" title="Copy to clipboard">Copy</button>
+    </div>
+
+    <div class="group" style="margin-top:14px;">
+      <div class="item">
+        <input type="checkbox" id="lower" checked />
+        <label for="lower">Lowercase (a-z)</label>
+      </div>
+      <div class="item">
+        <input type="checkbox" id="upper" checked />
+        <label for="upper">Uppercase (A-Z)</label>
+      </div>
+      <div class="item">
+        <input type="checkbox" id="nums" checked />
+        <label for="nums">Numbers (0-9)</label>
+      </div>
+      <div class="item">
+        <input type="checkbox" id="syms" />
+        <label for="syms">Symbols (!@#$…)</label>
+      </div>
+    </div>
+
+    <div class="range">
+      <div>
+        <label class="hint" for="length">Length</label>
+        <div class="row" style="margin-top:6px;">
+          <input type="number" id="length" min="4" max="64" value="12" />
+          <span class="badge" id="lengthBadge">12</span>
+        </div>
+        <div class="strength" aria-hidden="true"><div id="bar" class="bar"></div></div>
+      </div>
+      <button id="genBtn" class="btn accent">Generate</button>
+    </div>
+
+    <div class="footer">
+      <button id="clearBtn" class="btn">Clear</button>
+    </div>
+
+    <div class="note">Tip: For important accounts, use a password manager and enable 2-factor authentication.</div>
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
